@@ -1,0 +1,22 @@
+<mat-toolbar color="primary" class="header" >
+    <div class="cursor" (click)="goHome()">NGO</div>
+    <button *ngIf="loginService.isLoggedIn()" class="btn btn-danger"  (click)="loginService.logout()">Logout</button> 
+
+  </mat-toolbar>
+  <br>
+<h1>Event Registration Detail: Ideal Parenting</h1>
+
+<div class="container" *ngIf="event">
+        <div class="grid-container">
+            <div class="item1">{{event.eventName}}</div>
+            <div class="item2">{{event.eventCategory}}</div>
+            <div class="item3">{{event.eventLocation}}</div>
+            <div class="item4"> Starts {{event.startDate}} {{event.startTime}}</div>
+            <div class="item5"> Ends {{event.endDate}} {{event.endTime}}</div>
+            <div class="item6">{{event.eventDescription}}</div>
+            <div class="item7"> Adult Price = {{event.adultTicket | currency}}</div>
+            <div class="item8"> Child Price = {{event.childTicket | currency}}</div>
+            <img class="item9"  src={{event.eventImage}}>
+            <button mat-flat-button color="primary" class="item10" (click)="onClick(event)">Register</button>
+        </div>
+</div>

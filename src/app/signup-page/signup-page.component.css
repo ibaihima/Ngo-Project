@@ -1,0 +1,18 @@
+.cursor{
+    cursor:pointer; 
+ }
+ .mat-stepper-vertical {
+     margin-top: 8px;
+   }
+   
+   .mat-mdc-form-field {
+     margin-top: 16px;
+   }
+ 
+   .matSize{
+     width: 100%;
+   }
+ 
+   .header{
+     justify-content: space-between;
+   }

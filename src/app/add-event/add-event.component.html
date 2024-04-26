@@ -1,0 +1,64 @@
+
+<form #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)" >
+    <div mat-dialog-actions>
+
+    <div class="form-group">
+        <label for="eventName">Event Name</label>
+        <input class="form-control" id="eventName" name="eventName" type="text" ngModel #EN = "ngModel" required>
+    </div>
+
+    
+    <div class="form-group">
+        <label for="eventDescription">Event Description</label>
+        <input class="form-control" id="eventDescription" name="eventDescription" type="text" ngModel  #ED = "ngModel" required>
+    </div>
+
+    <div class="form-group">
+        <label for="eventCategory">Event Category</label>
+        <input class="form-control" id="eventCategory" name="eventCategory" type="text" ngModel #EC = "ngModel" required>
+    </div>
+
+    <div class="form-group">
+        <label for="startDate">Start Date</label>
+        <input class="form-control" id="startDate" name="startDate" type="text" ngModel #SD = "ngModel" required> 
+    </div>  
+
+    <div class="form-group">
+        <label for="endDate">End Date</label>
+        <input class="form-control" id="endDate" name="endDate" type="text" ngModel  #ED = "ngModel" required>
+    </div>
+
+    <div class="form-group">
+        <label for="startTime">Start Time</label>
+        <input class="form-control" id="startTime" name="startTime" type="text" ngModel  #ST = "ngModel" required>
+    </div>
+    <div class="form-group">
+        <label for="endTime">End Time</label>
+        <input class="form-control" id="endTime" name="endTime" type="text" ngModel  #ET = "ngModel" required  >
+    </div>
+    <div class="form-group">
+        <label for="eventLocation">Event Location</label>
+        <input class="form-control" id="eventLocation" name="eventLocation" type="text" ngModel  #EL = "ngModel" required  >
+    </div>
+    <div class="form-group">
+        <label for="registration">Allowed to Register?</label>
+        <input class="form-control" id="registration" name="registration" type="checkbox"  ngModel  #R = "ngModel" required >
+    </div>
+    <div class="form-group">
+        <label for="eventImage">Image</label>
+        <input class="form-control" id="eventImage" name="eventImage" type="text" ngModel  #EI = "ngModel" required  >
+    </div>
+    <div class="form-group">
+        <label for="adultTicket">Adult Ticket Price</label>
+        <input class="form-control" id="adultTicket" name="adultTicket" type="text" ngModel  #AT = "ngModel" required  >
+    </div>
+    <div class="form-group">
+        <label for="childTicket">Child Ticket Price</label>
+        <input class="form-control" id="childTicket" name="childTicket" type="text" ngModel  #CT = "ngModel" required  >
+    </div>
+    </div>
+    <div mat-dialog-actions>
+       <button mat-button (click)="onNoClick()">No Thanks</button>
+        <button type="submit" mat-button [mat-dialog-close] [disabled]="userForm.invalid">Ok</button>
+      </div> 
+</form>

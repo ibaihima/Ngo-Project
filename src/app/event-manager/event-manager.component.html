@@ -1,0 +1,63 @@
+<mat-toolbar color="primary" class="header" >
+    <div>NGO</div>
+    <button *ngIf="loginService.isLoggedIn()" class="btn btn-danger"  (click)="loginService.logout()">Logout</button> 
+  </mat-toolbar>
+
+<mat-drawer-container class="matContainer">
+    <mat-drawer class ="matDrawer" mode="side" opened>
+        <div class="drawerContent">
+        <h3>
+            <button mat-button (clcik)="eventManag">
+            Event Management
+            </button>
+        </h3>
+        <br>
+        <br>
+            <h3>
+                <button mat-button (click)="userView()">
+                User View
+                </button>
+            </h3>
+        </div>
+    </mat-drawer>
+    <mat-drawer-content>
+        <h1>Event Management</h1>
+        <br>
+        <div class="container">
+            <div >
+            <h2 class = "addEvent" (click)="openAddDialog()">Add a new Event</h2>
+        </div>
+            <table  class="table"> 
+                <thead>
+                    <th>Event</th>
+                    <th>category</th>
+                    <th>Location</th>    
+                    <th>Start Date</th>    
+                    <th>End Date</th>
+                    <th></th>    
+                </thead>
+                <tbody>
+                    <tr *ngFor="let e of dataService.data">
+                        <td>{{e.eventName | titlecase}}</td>
+                        <td>{{e.eventCategory | titlecase}}</td>
+                        <td>{{e.eventLocation | titlecase}}</td>
+                        <td>{{e.startDate}}</td>
+                        <td>{{e.endDate}}</td>
+                        <td>
+                            <button mat-flat-button color = "primary" (click)="openEditDialog(e)">Edit</button>
+                            <button mat-flat-button color = "warn" (click)="onDelete(e.ngoId)">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </mat-drawer-content>
+  </mat-drawer-container>
+
+
+
+
+
+ 
+
+  

@@ -1,0 +1,31 @@
+/* mat-drawer{
+    width: 30%;
+    height:30%
+} */
+
+.matContainer {
+    /* width: 400px; */
+    height: 100%;
+    margin: 10px;
+    /* border: 1px solid #555; */
+  }
+
+  .matDrawer{
+    width: 20%;
+  }
+
+  .drawerContent{
+    margin:15%
+  }
+
+  .addEvent{
+    display: flex;
+    justify-content: end;
+    cursor: pointer;
+    width:fit-content;
+    margin-left:80%
+  }
+
+.header{
+  justify-content: space-between;
+}

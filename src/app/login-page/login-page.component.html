@@ -1,0 +1,20 @@
+<button *ngIf="route()" class="btn btn-danger"  (click)="dataService.logout()">Logout</button>
+
+<div *ngIf="!dataService.isLoggedIn()" class="container text-center">
+    <h4>Sign In</h4>
+    <div class="container w-25 text-start">
+        <div class="form-group">
+            <label>Email</label>
+            <input class="form-control" type="userName" [(ngModel)] = "userName" required>
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <input class="form-control" type="passWord" [(ngModel)] = "passWord" required >
+        </div>
+        <br/>
+        <div class="d-grid">
+            <button type="button" class="btn btn-primary btn-lg" (click)="userSubmit()">Login</button>
+            <h2>If new user <h2 class="cursor" (click)="onClick()">Sign Up</h2></h2>
+        </div>
+
+    </div> 

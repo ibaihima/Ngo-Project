@@ -1,0 +1,41 @@
+<mat-toolbar color="primary" class="header" >
+    <div class="cursor" (click)="goHome()">NGO</div>
+    <button *ngIf="loginService.isLoggedIn()" class="btn btn-danger"  (click)="loginService.logout()">Logout</button> 
+  </mat-toolbar>
+<h1>Event Registration</h1>
+
+
+
+<mat-drawer-container  class="matContainer">
+    <mat-drawer *ngIf="loginService.isAdmin()" class ="matDrawer" mode="side" opened>
+        <div class="drawerContent">
+        <h3>
+            <button mat-button (click)="goHome()">
+            Event Management
+            </button>
+        </h3>
+        <br>
+        <br>
+            <h3>
+                <button mat-button (click)="userView()">
+                User View
+                </button>
+            </h3>
+        </div>
+    </mat-drawer>
+    <mat-drawer-content>
+        <div class="card-display">
+            <div *ngFor="let e of ngos ">
+            <mat-card class="card">
+                <img class="cursor" (click)="onClick(e)" mat-card-image src={{e.eventImage}} alt="Photo of a Event">
+                <mat-card-content>
+                <p>
+                     {{e.eventName | titlecase}}: {{e.eventLocation | titlecase}}
+                </p>
+                </mat-card-content>
+            </mat-card>
+            </div>
+        </div>
+    </mat-drawer-content>
+
+</mat-drawer-container>

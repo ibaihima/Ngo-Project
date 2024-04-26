@@ -1,0 +1,74 @@
+<form (ngSubmit)="onSubmit()" *ngIf="myForm" [formGroup]="myForm" >
+    <div mat-dialog-actions>
+        <!-- <div class="form-group">
+            <input class="form-control" id="{{data.ngoId}}" type="hidden" value ="{{data.ngoId}}" formControlName = "ngoId"> 
+        </div> -->
+
+    <div class="form-group">
+        <label for="{{data.eventName}}">Event Name</label>
+        <input class="form-control" id="{{data.eventName}}"  type="text" formControlName = 'eventName' required minlength="1">
+    </div>
+
+    <div class="form-group">
+        <label for="{{data.eventDescription}}">Event Description</label>
+        <input class="form-control" id="{{data.eventDescription}}" type="text" formControlName ='eventDescription' required minlength="1">
+    </div>
+
+    <div class="form-group">
+        <label for="{{data.eventCategory}}">Event Category</label>
+        <input class="form-control" id="{{data.eventCategory}}" type="text"formControlName ='eventCategory' required minlength="1">
+    </div>
+
+    <div class="form-group">
+        <label for="{{data.startDate}}">Start Date</label>
+        <input class="form-control" id="{{data.startDate}}" type="text"formControlName = 'startDate' required minlength="1"> 
+    </div>  
+
+    <div class="form-group">
+        <label for="{{data.endDate}}">End Date</label>
+        <input class="form-control" id="{{data.endDate}}" type="text"formControlName = 'endDate' required minlength="1">
+    </div>
+
+    <div class="form-group">
+    <label for="{{data.startTime}}">Start Time</label>
+    <input class="form-control" id={{data.startTime}} type="text"formControlName = 'startTime' required>
+    </div>
+    <div class="form-group">
+        <label for="{{data.endTime}}">End Time</label>
+        <input class="form-control" id="{{data.endTime}}"  type="text"formControlName = 'endTime' required>
+    </div>
+    <div class="form-group">
+        <label for="{{data.eventLocation}}">Event Location</label>
+        <input class="form-control" id="{{data.eventLocation}}"  type="text"formControlName = 'eventLocation' required >
+    </div>
+    <div class="form-group">
+        <label for="{{data.registration}}">Allowed to Register?</label>
+        <input  class="form-control" id={{data.registration}} type="checkbox"  formControlName = 'registration' >
+    </div> -
+    <!-- <div *ngIf="data.registration; else elseblock">
+        <input  class="form-control" id={{data.registration}} type="checkbox"  formControlName = 'registration' checked>
+    </div>
+    <ng-template #elseblock>
+        <input  class="form-control" id={{data.registration}} type="checkbox"  formControlName = 'registration'>
+    </ng-template> -->
+
+    <div class="form-group">
+        <label for="{{data.eventImage}}">Image</label>
+        <input class="form-control" id="{{data.eventImage}}"  type="text"formControlName = 'eventImage'  required>
+    </div>
+    <div class="form-group">
+        <label for="{{data.adultTicket}}">Adult Ticket Price</label>
+        <input class="form-control" id="{{data.adultTicket}}"  type="text"formControlName = 'adultTicket' required>
+    </div>
+    <div class="form-group">
+        <label for="{{data.childTicket}}">Child Ticket Price</label>
+        <input class="form-control" id="{{data.childTicket}}"  type="text"formControlName = 'childTicket' required>
+    </div>
+
+    
+    </div>
+    <div mat-dialog-actions>
+       <button mat-button (click)="onNoClick()">No Thanks</button>
+        <button type="submit" mat-button [mat-dialog-close]>Ok</button>
+      </div> 
+</form>
